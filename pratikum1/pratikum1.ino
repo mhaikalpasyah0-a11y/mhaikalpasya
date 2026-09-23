@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <ESP8266WiFi.h>  
 #include <ESP8266WebServer.h>  
 #include <DHT.h>
@@ -100,4 +101,22 @@ void setup() {
 
 void loop() {  
   server.handleClient();  
+=======
+const byte ldrPin = A0; 
+
+void setup() {  
+  Serial.begin(115200);  
+}
+
+void loop() {  
+  int ldrValue = analogRead(ldrPin);
+
+  int cahayaPersen = map(ldrValue, 0, 1023, 0, 100);   
+    
+  Serial.print("Intensitas Cahaya (ADC): ");
+  Serial.print(cahayaPersen);  
+  Serial.println("%");  
+    
+  delay(1000);   
+>>>>>>> f5f13955e8f29aa868e2fc93e05da60469dc6cba
 }
